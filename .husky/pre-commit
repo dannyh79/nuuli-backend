@@ -1,1 +1,5 @@
+npm run typecheck
+npm run formatcheck
+npm run lintcheck
 npm test
+npm run test:e2e
