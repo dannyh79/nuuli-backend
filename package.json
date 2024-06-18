@@ -8,6 +8,10 @@
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"prisma/**/*.ts\"",
+    "db:migrate:dev": "dotenv -e .env -- npx prisma migrate dev",
+    "db:migrate:test": "dotenv -e .env.test -- npx prisma migrate dev",
+    "db:reset:dev": "dotenv -e .env -- npx prisma migrate reset",
+    "db:reset:test": "dotenv -e .env.test -- npx prisma migrate reset -f",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
@@ -32,6 +36,7 @@
     "@typescript-eslint/eslint-plugin": "^7.11.0",
     "@typescript-eslint/parser": "^7.11.0",
     "@typescript-eslint/typescript-estree": "^7.11.0",
+    "dotenv-cli": "^7.4.2",
     "graphql": "^16.8.2",
     "husky": "^9.0.11",
     "reflect-metadata": "^0.2.0",
