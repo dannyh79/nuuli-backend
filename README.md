@@ -11,6 +11,9 @@ $ npm install
 ## Running the app
 
 ```bash
+$ cp .env.example .env
+# then update DATABASE_URL inside .env to an actual PostgreSQL endpoint
+
 # development
 $ npm run start
 
