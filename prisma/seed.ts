@@ -15,8 +15,18 @@ You will be able to learn how to use different muscle groups.`,
     update: workoutRecord,
     create: workoutRecord,
   });
+  const warmupRecord = {
+    id: 1,
+    length: 300,
+    workoutId: workoutRecord.id,
+  };
+  const warmup = await prisma.warmup.upsert({
+    where: { id: warmupRecord.id },
+    update: warmupRecord,
+    create: warmupRecord,
+  });
 
-  console.log({ workout });
+  console.log({ workout, warmup });
 };
 
 main()

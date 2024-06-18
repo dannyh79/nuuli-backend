@@ -1,4 +1,5 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { Warmup } from './warmup.entity';
 
 @ObjectType()
 export class Workout {
@@ -10,4 +11,7 @@ export class Workout {
 
   @Field()
   instruction: string;
+
+  @Field({ nullable: true })
+  warmup?: Warmup;
 }

@@ -24,6 +24,10 @@ describe('WorkoutsResolver (e2e)', () => {
         id
         name
         instruction
+        warmup {
+          id
+          length
+        }
       }
     }
     `;
@@ -33,6 +37,10 @@ describe('WorkoutsResolver (e2e)', () => {
       instruction: `This training program will begin from a full body circuit training on the first day:
 You will be able to learn how to use different muscle groups from today’s training.
 You will be able to learn how to use different muscle groups.`,
+      warmup: {
+        id: 1,
+        length: 300,
+      },
     };
     return request(app.getHttpServer())
       .post(endpoint)

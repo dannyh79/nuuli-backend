@@ -6,8 +6,16 @@ type Query {
   workout(id: Int!): Workout!
 }
 
+type Warmup {
+  id: Float!
+
+  """Duration in seconds"""
+  length: Float!
+}
+
 type Workout {
   id: Int!
   instruction: String!
   name: String!
+  warmup: Warmup
 }
