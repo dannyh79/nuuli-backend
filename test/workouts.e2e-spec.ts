@@ -23,12 +23,16 @@ describe('WorkoutsResolver (e2e)', () => {
       workout(id: 1) {
         id
         name
+        instruction
       }
     }
     `;
     const expected = {
       id: 1,
       name: 'Full Body',
+      instruction: `This training program will begin from a full body circuit training on the first day:
+You will be able to learn how to use different muscle groups from today’s training.
+You will be able to learn how to use different muscle groups.`,
     };
     return request(app.getHttpServer())
       .post(endpoint)

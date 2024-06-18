@@ -8,5 +8,6 @@ type Query {
 
 type Workout {
   id: Int!
+  instruction: String!
   name: String!
 }

@@ -6,6 +6,9 @@ const main = async () => {
   const workoutRecord = {
     id: 1,
     name: 'Full Body',
+    instruction: `This training program will begin from a full body circuit training on the first day:
+You will be able to learn how to use different muscle groups from today’s training.
+You will be able to learn how to use different muscle groups.`,
   };
   const workout = await prisma.workout.upsert({
     where: { id: workoutRecord.id },

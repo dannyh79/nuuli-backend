@@ -7,4 +7,7 @@ export class Workout {
 
   @Field()
   name: string;
+
+  @Field()
+  instruction: string;
 }

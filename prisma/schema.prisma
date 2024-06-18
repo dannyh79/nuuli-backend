@@ -16,6 +16,7 @@ datasource db {
 model Workout {
   id Int @id @default(autoincrement())
   name String @db.VarChar(255)
+  instruction String @default("")
 
   @@map("workouts")
 }
