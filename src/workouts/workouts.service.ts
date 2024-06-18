@@ -1,13 +1,15 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
+import Repository from 'src/repositories/types';
 import { Workout } from './workout.model';
 
 @Injectable()
 export class WorkoutsService {
-  findById(_id: number): Promise<Workout> {
-    const stubbedWorkout = {
-      id: 1,
-      name: 'Full Body',
-    };
-    return new Promise((resolve) => resolve(stubbedWorkout));
+  constructor(
+    @Inject('WorkoutsRepository')
+    private workoutsRepository: Repository<Workout>,
+  ) {}
+
+  findById(id: number): Promise<Workout> {
+    return this.workoutsRepository.findById(id);
   }
 }
