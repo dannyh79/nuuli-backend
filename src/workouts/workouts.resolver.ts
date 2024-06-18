@@ -1,5 +1,5 @@
 import { Args, Int, Query, Resolver } from '@nestjs/graphql';
-import { Workout } from './workout.model';
+import { Workout } from './workout.entity';
 import { WorkoutsService } from './workouts.service';
 
 @Resolver(() => Workout)

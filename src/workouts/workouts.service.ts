@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import Repository from 'src/repositories/types';
-import { Workout } from './workout.model';
+import { Workout } from './workout.entity';
 
 @Injectable()
 export class WorkoutsService {
