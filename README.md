@@ -27,6 +27,9 @@ $ npm run start:prod
 ## Test
 
 ```bash
+$ cp .env.test.example .env.test.local
+# then update DATABASE_URL inside .env.test.local to an actual PostgreSQL endpoint
+
 # unit tests
 $ npm run test
 

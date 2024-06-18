@@ -1,12 +1,13 @@
-import { Workout } from "src/workouts/workout.model";
-import Repository from "./types";
+import { Injectable } from '@nestjs/common';
+import { PrismaService } from '../prisma/prisma.service';
+import { Workout } from 'src/workouts/workout.model';
+import Repository from './types';
 
+@Injectable()
 export default class WorkoutsRepository implements Repository<Workout, number> {
-  async findById(_id: number): Promise<Workout | null> {
-    const stubbedWorkout = {
-      id: 1,
-      name: 'Full Body',
-    };
-    return new Promise((resolve) => resolve(stubbedWorkout))
+  constructor(private prisma: PrismaService) {}
+
+  async findById(id: number): Promise<Workout | null> {
+    return this.prisma.workout.findUnique({ where: { id } });
   }
 }
