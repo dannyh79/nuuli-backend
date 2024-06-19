@@ -22,6 +22,8 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
+
+# access graphQL playground via http://localhost:3000/graphql
 ```
 
 ## Test
@@ -39,3 +41,7 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+## Documentation & Sample Request/Response
+
+Use Postman's [import feature](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-data/) to import `/docs/api/postman_collection.json` for API documentation.

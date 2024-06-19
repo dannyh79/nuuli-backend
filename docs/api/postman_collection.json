@@ -1,0 +1,329 @@
+{
+	"info": {
+		"_postman_id": "10cecddd-0661-4216-94b9-dd9602aa8589",
+		"name": "Nüli Backend",
+		"description": "`No authentication as of commit d5de89c.`",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7267679"
+	},
+	"item": [
+		{
+			"name": "/graphql",
+			"item": [
+				{
+					"name": "Get a Workout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query($id: Int!) {\n  workout(id: $id) {\n    id\n    name\n    warmup {\n      length\n    }\n  }\n}",
+								"variables": "{ \"id\": 1 }"
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/graphql",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"graphql"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This query gets a workout by id, or `null` if no workout is found."
+					},
+					"response": [
+						{
+							"name": "Workout Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query($id: Int!) {\n  workout(id: $id) {\n    id\n    name\n    warmup {\n      length\n    }\n  }\n}",
+										"variables": "{ \"id\": 1 }"
+									}
+								},
+								"url": {
+									"raw": "{{endpoint}}/graphql",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"graphql"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"49-B0swS1ndGgcOkR2ZwBQ+V3c7s6Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jun 2024 06:53:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"workout\": {\n            \"id\": 1,\n            \"name\": \"Full Body\",\n            \"warmup\": {\n                \"length\": 300\n            }\n        }\n    }\n}"
+						},
+						{
+							"name": "Workout not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query($id: Int!) {\n  workout(id: $id) {\n    id\n    name\n    warmup {\n      length\n    }\n  }\n}",
+										"variables": "{ \"id\": 2 }"
+									}
+								},
+								"url": {
+									"raw": "{{endpoint}}/graphql",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"graphql"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-ePDEt9+m4zd1Propw/UcClLWYLc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jun 2024 06:55:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"workout\": null\n    }\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query($id: Int!) {\n  workout(id: $id) {\n    id\n    name\n    warmup {\n      length\n    }\n  }\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "{{endpoint}}/graphql",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"graphql"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-store"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1519"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5ef-ETShvNuKOBZD01br7DOVzly7/M4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jun 2024 06:56:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"message\": \"Variable \\\"$id\\\" of required type \\\"Int!\\\" was not provided.\",\n            \"locations\": [\n                {\n                    \"line\": 1,\n                    \"column\": 7\n                }\n            ],\n            \"extensions\": {\n                \"code\": \"BAD_USER_INPUT\",\n                \"stacktrace\": [\n                    \"GraphQLError: Variable \\\"$id\\\" of required type \\\"Int!\\\" was not provided.\",\n                    \"...\"\n                ]\n            }\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "X-API-Key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "endpoint",
+			"value": "http://localhost:3000"
+		}
+	]
+}
