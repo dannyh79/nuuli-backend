@@ -16,6 +16,8 @@ $ npm install
 $ cp .env.example .env
 # then update DATABASE_URL inside .env to an actual PostgreSQL endpoint
 
+$ npm run db:migrate:dev
+
 # development
 $ npm run start
 
