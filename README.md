@@ -4,6 +4,40 @@
 
 For full instructions on what we'd like you to do please visit our [official developer test page](https://www.notion.so/nuliapp/Nuli-Mid-Level-Mobile-Developer-Test-83f53a4746824e4a8f924b8b9fc13d69#27bb0550be78474f830cfa65d552822d)
 
+## Deliverables
+
+- API
+    - Endpoints
+        - Fetch a workout
+            - [x] Basic info
+            - [ ] Workout content: warmup w/ circuits, main workout w/ circuits, exercises
+        - [ ] Swap an exercise of a workout
+        - [ ] Authentication
+    - [x] E2E test
+    - [x] Documentation with sample request/response
+    - [ ] Unit test
+- Misc
+    - [ ] Assets serving
+
+## Backlog
+
+- API
+    - Endpoints
+        - Fetch a workout
+            - [ ] Workout content: warmup w/ circuits, main workout w/ circuits, exercises
+        - [ ] Swap an exercise of a workout
+        - [ ] Authentication
+    - [ ] Unit test
+- Feature
+    - [ ] Template-rize workout for individual users to clone
+    - [ ] Exercise swapping
+- DB
+    - [ ] Leverage STI for warmup and workout group records
+    - [ ] Normalization
+    - [ ] Inspect queries via query plans and optimize when seen fit
+- Misc
+    - [ ] Assets serving
+
 ## Installation
 
 ```bash
