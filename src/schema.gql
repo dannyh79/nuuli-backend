@@ -3,7 +3,7 @@
 # ------------------------------------------------------
 
 type Query {
-  workout(id: Int!): Workout!
+  workout(id: Int!): Workout
 }
 
 type Warmup {

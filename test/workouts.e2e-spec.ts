@@ -17,7 +17,7 @@ describe('WorkoutsResolver (e2e)', () => {
     await app.init();
   });
 
-  it('returns a workout by id', () => {
+  it('returns { workout } in response.body.data', () => {
     const query = `
     {
       workout(id: 1) {
@@ -47,5 +47,20 @@ You will be able to learn how to use different muscle groups.`,
       .send({ query })
       .expect(200)
       .expect((res) => expect(res.body.data.workout).toEqual(expected));
+  });
+
+  it('returns { workout: null } in response.body.data', () => {
+    const query = `
+    {
+      workout(id: 3345678) {
+        id
+      }
+    }
+    `;
+    return request(app.getHttpServer())
+      .post(endpoint)
+      .send({ query })
+      .expect(200)
+      .expect((res) => expect(res.body.data.workout).toEqual(null));
   });
 });

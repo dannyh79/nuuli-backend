@@ -17,7 +17,7 @@ export class WorkoutsResolver {
     private warmupsService: WarmupsService,
   ) {}
 
-  @Query(() => Workout)
+  @Query(() => Workout, { nullable: true })
   async workout(@Args('id', { type: () => Int }) id: number) {
     return this.workoutsService.findById(id);
   }
