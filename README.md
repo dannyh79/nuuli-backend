@@ -1,3 +1,5 @@
+[![CI](https://github.com/dannyh79/nuuli-backend/actions/workflows/main.yml/badge.svg)](https://github.com/dannyh79/nuuli-backend/actions/workflows/main.yml)
+
 # Welcome to the backend nüli test app
 
 For full instructions on what we'd like you to do please visit our [official developer test page](https://www.notion.so/nuliapp/Nuli-Mid-Level-Mobile-Developer-Test-83f53a4746824e4a8f924b8b9fc13d69#27bb0550be78474f830cfa65d552822d)
