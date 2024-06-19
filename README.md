@@ -38,6 +38,10 @@ For full instructions on what we'd like you to do please visit our [official dev
 - Misc
     - [ ] Assets serving
 
+## Documentation & Sample Request/Response
+
+Use Postman's [import feature](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-data/) to import `/docs/api/postman_collection.json` for API documentation.
+
 ## Installation
 
 ```bash
@@ -79,7 +83,3 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-
-## Documentation & Sample Request/Response
-
-Use Postman's [import feature](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-data/) to import `/docs/api/postman_collection.json` for API documentation.
